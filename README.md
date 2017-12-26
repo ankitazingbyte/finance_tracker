@@ -55,4 +55,13 @@ Then run the following two commands from the terminal:
 rails g devise:views:locale en
 
 rails g devise:views:bootstrap_templates
-
+ # for create a friend
+ rails c >> user = User.find()
+ 		 >>user.friends
+ 		 >>user.friends << user
+# for friendship 
+rails c >> User.find(3)
+		>>@user=User.find(3)
+		>>@user
+		>>@user.friendships.build(friend_id: @user.id)
+		>> Friendship.all
